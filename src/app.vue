@@ -50,7 +50,6 @@
     .charts {
         width: 100%;
         height: 100%;
-        /*background: url("../statics/images/back1.jpg") repeat;*/
         background: rgba(220,220,220,0.6);
         background-size: 100%;
         overflow-y: scroll;

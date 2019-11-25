@@ -20,7 +20,7 @@ export default [
     },
     {
         path: '/errormonitor',
-        component: () => import('../src/view/error/http.vue'),
+        component: () => import('../src/view/error/error.vue'),
         name: 'error'
     },
     // {

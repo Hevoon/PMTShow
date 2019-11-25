@@ -1,6 +1,5 @@
 <template>
     <div class="whole">
-        <!--        <div class="relation"  v-for="(ch,index) in charts" :ref="charts[index]"></div>-->
         <div v-for="(ch,index) in charts" :ref="ch" class="relation"></div>
     </div>
 </template>

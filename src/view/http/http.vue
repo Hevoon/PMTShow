@@ -1,4 +1,3 @@
-<script src="../../../../pmts/src/router.js"></script>
 <template>
     <div>
         <div class="whole" v-for="(ch,index) in charts">
@@ -230,7 +229,6 @@
                 let url = `httpdisplay`
                 let self = this
                 let data = await getChartInfo(url)
-                // console.log(data)
                 let dealData = []
                 data.map(function (info) {
                     let _b = {

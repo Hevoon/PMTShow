@@ -1,4 +1,3 @@
-<script src="../../../../pmts/src/router.js"></script>
 <template>
     <div>
         <div class="whole" v-for="ch in charts">
@@ -147,7 +146,6 @@
                 let self = this
                 let data = await getChartInfo(url)
                 let dealData = []
-                console.log(data)
                 data.map(function (info) {
                     let pageList = []
                     let chartList = []
@@ -162,7 +160,6 @@
                             pageLoad: [],
                             timeInfo: [],
                         }
-                        // console.log(key)
                         value[key].map(function (_e) {
                             _b.domTreeCons.push(_e.domTreeCons)
                             _b.whiteScreen.push(_e.whiteScreen)
