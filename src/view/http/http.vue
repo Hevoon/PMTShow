@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="whole" v-for="(ch,index) in charts">
-            <sitehead :siteName="ch.chart"></sitehead>
+            <sitehead :siteName="`${ch.chart}站点 接口请求监控`"></sitehead>
             <div class="relations" :ref="ch.chart"></div>
             <el-table
                     class="whole_table"
@@ -304,17 +304,17 @@
     }
 
     .whole_table {
-        margin: 10%  5% 30px 5%;
+        margin: 8%  5% 30px 5%;
         width: 40%;
         float: left;
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .relations {
-        margin: 10% 5% 30px 5%;
+        margin: 8% 5% 30px 5%;
         width: 40%;
         float: left;
-        height: 60%;
+        height: 440px;
         background-color: #2c343c;
         box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 5px 5px;
     }

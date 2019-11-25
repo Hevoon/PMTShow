@@ -1,16 +1,20 @@
 <template>
     <div class="whole">
+        <sitehead siteName="pv/uv监控界面"></sitehead>
         <div v-for="(ch,index) in charts" :ref="ch" class="relation"></div>
     </div>
 </template>
-
 <script>
 
 
     import eCharts from 'echarts'
     import getChartInfo from '../../utils/getChartsInfo'
+    import siteHead from '../../components/siteHead/siteHead.vue'
 
     export default {
+        components: {
+            sitehead: siteHead
+        },
         data() {
             return {
                 charts: [],
@@ -18,7 +22,8 @@
                 title: {
                     text: '',
                     textStyle: {
-                        color: 'rgba(255, 255, 255, 0.8)'
+                        color: 'rgba(255, 255, 255, 0.8)',
+                        fontSize: 15
                     }
                 },
                 backgroundColor: '#2c343c',
@@ -29,8 +34,8 @@
                     show: true,
                     feature: {
                         dataView: {show: true, readOnly: false},
-                        magicType: {show: true, type: ['line', 'bar']},
-                        restore: {show: true},
+                        // magicType: {show: true, type: ['line', 'bar']},
+                        // restore: {show: true},
                         saveAsImage: {show: true}
                     }
                 },
@@ -82,7 +87,13 @@
                             data: [
                                 {type: 'average', name: '平均值'}
                             ]
-                        }
+                        },
+                        markPoint: {
+                            data: [
+                                {type: 'max', name: 'pv最大值'},
+                                {type: 'min', name: 'pv最小值'}
+                            ]
+                        },
                     }
                 ]
             }
@@ -168,8 +179,9 @@
 </script>
 
 <style scoped lang="less" type="text/less">
-    .whole{
+    .whole {
         width: 100%;
+
         .relation {
             margin: 10% 5% 30px 5%;
             width: 40%;

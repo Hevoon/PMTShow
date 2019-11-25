@@ -9,9 +9,8 @@
                 :modal="modal"
                 size="18%">
             <ul class="aside_menu">
-                <router-link v-for='(li,index) in ul' :key="index" :to="li.path"
-                             style="text-decoration: none;display: block">
-                    <li class="aside_option" :key="index">{{li.title}}</li>
+                <router-link v-for='(li,index) in ul' :key="index" :to="li.path" class="aside_list">
+                    <li class="aside_option" @click="handleClose()" :key="index">{{li.title}}</li>
                 </router-link>
             </ul>
         </el-drawer>
@@ -51,7 +50,11 @@
         },
         methods: {
             handleClose() {
-                this.$store.commit('toggleAside')
+                let self = this
+                setTimeout(function () {
+                    self.$store.commit('toggleAside')
+                }, 300)
+
             }
         }
     }
@@ -69,11 +72,17 @@
             font-size: 20px;
             text-align: center;
 
+            .aside_list {
+                text-decoration: none;
+                display: block
+            }
+
             .aside_option {
                 transition: all 0.5s;
                 width: 100%;
                 line-height: 60px;
                 height: 60px;
+                font-size: 20px;
                 color: rgba(255, 255, 255, 0.8);
                 margin: 20px 0 20px 0;
                 border-bottom: 1px solid;

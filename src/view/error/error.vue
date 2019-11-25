@@ -1,15 +1,14 @@
 <template>
     <div>
         <div class="whole" v-for="(ch,index) in charts">
-            <sitehead :siteName="ch.chart"></sitehead>
+            <sitehead :siteName="`${ch.chart}站点 错误监控`"></sitehead>
             <el-table
                     class="whole_table"
                     :data="ch.tableDataOrg"
                     border
                     stripe
-                    max-height="700">
+                    max-height="620">
                 <el-table-column
-                        width="300"
                         prop="message"
                         label="错误信息">
                 </el-table-column>
@@ -48,7 +47,6 @@
                     max-height="620"
             >
                 <el-table-column
-                        width="300"
                         prop="message"
                         label="错误信息">
                 </el-table-column>

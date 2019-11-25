@@ -1,6 +1,6 @@
 <template>
     <el-container class="whole" id="whole_father">
-        <el-header class="header">
+        <el-header class="header" height=48>
             <headlogo class="search"></headlogo>
         </el-header>
         <el-container style="width: 100%;height: 100%;">

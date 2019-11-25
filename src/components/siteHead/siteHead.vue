@@ -1,6 +1,6 @@
 <template>
     <div class="head">
-        <h1 class="head_text">{{siteName}} 站点</h1>
+        <h1 class="head_text">{{siteName}}</h1>
     </div>
 </template>
 
@@ -15,16 +15,17 @@
     .head {
         position: relative;
         background-color: #f2f2f2;
-        height: 60px;
+        height: 48px;
         clear: both;
     }
 
     .head_text {
         margin: 0;
-        height: 60px;
+        height: 48px;
         text-align: center;
         width: 100%;
-        line-height: 60px;
+        font-size: 20px;
+        line-height: 48px;
         color: #333;
     }
 

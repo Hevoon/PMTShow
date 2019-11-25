@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="whole" v-for="ch in charts">
-            <sitehead :siteName="ch.siteName"></sitehead>
+            <sitehead :siteName="`${ch.siteName}站点 性能及资源加载监控`"></sitehead>
             <div v-for="grandCh in ch" class="relations_div">
                 <h3 class="relations_head">{{grandCh.chart}} </h3>
                 <div class="relations" :ref="grandCh.chart"></div>
@@ -194,7 +194,7 @@
                         let domArray = self.$refs[ref]
                         let dom = domArray[0]
                         let _opt = self.opt
-                        _opt.title.text = chart.siteName
+                        // _opt.title.text = chart.siteName
                         _opt.xAxis[0].data = chart.timeInfo
                         _opt.series[0].data = chart.domTreeCons
                         _opt.series[1].data = chart.whiteScreen
@@ -241,16 +241,17 @@
         }
 
         .relations_div {
-            margin: 10% 5% 30px 5%;
+            margin: 8% 5% 30px 5%;
             width: 40%;
             float: left;
-            height: 550px;
+            height: 440px;
             background-color: #2c343c;
             box-shadow: rgba(0, 0, 0, 0.3) 1px 1px 5px 5px;
 
             .relations_head {
                 width: 100%;
                 height: 20px;
+                font-size: 15px;
                 line-height: 20px;
                 text-align: center;
                 background-color: #2c343c;
